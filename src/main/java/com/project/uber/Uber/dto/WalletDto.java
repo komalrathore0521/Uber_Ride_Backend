@@ -1,12 +1,25 @@
 package com.project.uber.Uber.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
+
 import java.util.List;
 
+@Schema(description = "Represents a user's wallet containing balance and transaction history.")
 public class WalletDto {
 
+    @Schema(description = "Unique ID of the wallet", example = "1001")
     private Long id;
+
+    @Schema(description = "User associated with this wallet", required = true, implementation = UserDto.class)
+    @NotNull
     private UserDto user;
+
+    @Schema(description = "Current available wallet balance (in INR)", example = "2500.75", required = true)
+    @NotNull
     private Double balance;
+
+    @Schema(description = "List of wallet transactions performed by the user", implementation = WalletTransactionDto.class)
     private List<WalletTransactionDto> transactions;
 
     public WalletDto() {

@@ -1,9 +1,19 @@
 package com.project.uber.Uber.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
+
+@Schema(description = "Rider details including associated user information and overall rating")
 public class RiderDto {
 
+    @Schema(description = "Unique ID of the rider", example = "301")
     private Long id;
+
+    @Schema(description = "User account details associated with the rider", required = true, implementation = UserDto.class)
+    @NotNull
     private UserDto user;
+
+    @Schema(description = "Average rating given to the rider by drivers (1.0 - 5.0)", example = "4.7")
     private Double rating;
 
     public RiderDto() {

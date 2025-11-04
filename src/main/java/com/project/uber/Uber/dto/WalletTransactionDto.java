@@ -2,18 +2,41 @@ package com.project.uber.Uber.dto;
 
 import com.project.uber.Uber.entities.enums.TransactionMethod;
 import com.project.uber.Uber.entities.enums.TransactionType;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDateTime;
 
+@Schema(description = "Represents a wallet transaction entry, including details like amount, method, type, and linked ride or wallet.")
 public class WalletTransactionDto {
 
+    @Schema(description = "Unique ID of the wallet transaction", example = "3001")
     private Long id;
+
+    @Schema(description = "Transaction amount (positive for credit, negative for debit)", example = "250.75", required = true)
+    @NotNull
     private Double amount;
+
+    @Schema(description = "Type of transaction (CREDIT or DEBIT)", example = "CREDIT", required = true)
+    @NotNull
     private TransactionType transactionType;
+
+    @Schema(description = "Payment method used for this transaction", example = "UPI | CARD | CASH | WALLET", required = true)
+    @NotNull
     private TransactionMethod transactionMethod;
+
+    @Schema(description = "Ride associated with this transaction, if applicable", implementation = RideDto.class)
     private RideDto ride;
+
+    @Schema(description = "External or system-generated transaction ID", example = "TXN20251104012345", required = true)
+    @NotBlank
     private String transactionId;
+
+    @Schema(description = "Wallet associated with this transaction", implementation = WalletDto.class)
     private WalletDto wallet;
+
+    @Schema(description = "Timestamp when the transaction occurred (ISO format)", example = "2025-11-04T15:42:00")
     private LocalDateTime timestamp;
 
     public WalletTransactionDto() {
@@ -94,6 +117,9 @@ public class WalletTransactionDto {
         this.timestamp = timestamp;
     }
 
+    // -------------------------------
+    // Builder class (unchanged)
+    // -------------------------------
     public static class WalletTransactionDtoBuilder {
         private Long id;
         private Double amount;

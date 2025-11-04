@@ -1,13 +1,26 @@
 package com.project.uber.Uber.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
+
+@Schema(description = "Represents a driver, including user details, availability status, vehicle, and rating.")
 public class DriverDto {
 
+    @Schema(description = "Unique ID of the driver", example = "201")
     private Long id;
-    private UserDto user;
-    private Double rating;
-    private Boolean available;
-    private Long vehicleId;
 
+    @Schema(description = "User information associated with the driver", required = true, implementation = UserDto.class)
+    @NotNull
+    private UserDto user;
+
+    @Schema(description = "Average rating of the driver (1.0 - 5.0)", example = "4.8")
+    private Double rating;
+
+    @Schema(description = "Driver's current availability status", example = "true")
+    private Boolean available;
+
+    @Schema(description = "ID of the vehicle assigned to the driver", example = "501")
+    private Long vehicleId;
 
     public DriverDto() {
     }

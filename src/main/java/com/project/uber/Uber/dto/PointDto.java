@@ -1,9 +1,25 @@
 package com.project.uber.Uber.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
+
+@Schema(description = "Geographical Point object following GeoJSON structure")
 public class PointDto {
 
+    @Schema(
+            description = "Array containing latitude and longitude as [lon, lat]",
+            example = "[81.6337, 21.2379]",
+            required = true
+    )
+    @NotNull
     private double[] coordinates;
-    private String type = "Points";
+
+    @Schema(
+            description = "Type of geometry, always 'Point'",
+            example = "Point",
+            required = true
+    )
+    private String type = "Point";
 
     public PointDto() {
     }
