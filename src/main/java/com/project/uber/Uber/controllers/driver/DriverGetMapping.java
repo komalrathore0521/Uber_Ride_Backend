@@ -33,5 +33,10 @@ public class DriverGetMapping {
         return ResponseEntity.ok(driverService.getDriverProfile());
     }
 
-
+    @GetMapping("/getMyRides")
+    public ResponseEntity<List<DriverRideDto>> getAllMyRides(@RequestParam(defaultValue = "id") String sortBy, @RequestParam(defaultValue = "1") Integer pageNumber){
+        Pageable pageRequest = PageRequest.of(pageNumber,PAGE_SIZE, Sort.by(sortBy).ascending());
+        Page<DriverRideDto> rides = driverService.getAllMyRides(pageRequest);
+        return ResponseEntity.ok(rides.getContent());
+    }
 }
