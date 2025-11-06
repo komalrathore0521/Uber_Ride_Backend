@@ -214,4 +214,16 @@ Below is the typical **end-to-end flow** of a ride within the **GoRide** system,
 6. **System** marks the ride as completed and records ratings.
 
 ---
+## 🐳 Run with Docker
+
+You can pull and run the latest container directly from Docker Hub:
+
+```bash
+docker pull komalrathore22032001/goride-backend:latest
+docker run -d -p 8080:8080 \
+  -e SPRING_DATASOURCE_URL=jdbc:postgresql://host.docker.internal:5432/goride \
+  -e SPRING_DATASOURCE_USERNAME=postgres \
+  -e SPRING_DATASOURCE_PASSWORD=postgres \
+  -e APP_JWT_SECRET=change-me \
+  komalrathore22032001/goride-backend:latest
 
