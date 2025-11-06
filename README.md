@@ -4,10 +4,13 @@
   <a href="https://goride-g1n3.onrender.com/swagger-ui/index.html" target="_blank">
     <img src="https://img.shields.io/badge/🚀_Live_API_Docs-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Live API Docs">
   </a>
-  <a href="https://github.com/komalrathore0521/GoRide" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub_Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repo">
+  <a href="https://hub.docker.com/r/komalrathore22032001/goride-backend" target="_blank">
+    <img src="https://img.shields.io/badge/View_on-DockerHub-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub">
   </a>
 </div>
+
+
+
 
 <br>
 
