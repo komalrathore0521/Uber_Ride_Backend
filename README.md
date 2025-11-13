@@ -11,6 +11,18 @@
 
 
 
+<details>
+  <summary><strong>Click to expand the LLD diagram</strong></summary>
+
+  <p align="center">
+    <a href="GoRide_LLD.png">
+      <img src="GoRide_LLD.png" alt="GoRide LLD Diagram" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:6px;">
+    </a>
+  </p>
+
+  *Tip: After expanding, click the image to open the full-size version (zoom / fullscreen available in GitHub viewer).*
+</details>
+
 
 <br>
 
@@ -45,6 +57,10 @@ It’s designed for scalability, clean architecture, and secure communication th
 ![PostGIS](https://img.shields.io/badge/PostGIS-006400?style=for-the-badge&logo=postgis&logoColor=white)
 
 ---
+
+
+
+
 
 ## 🚀 Local Development Setup
 
