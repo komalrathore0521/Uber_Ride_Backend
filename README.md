@@ -23,6 +23,18 @@
   *Tip: After expanding, click the image to open the full-size version (zoom / fullscreen available in GitHub viewer).*
 </details>
 
+<details>
+  <summary><strong>Click to expand the Schema</strong></summary>
+
+  <p align="center">
+    <a href="GoRide_Schema.png">
+      <img src="GoRide_Schema.png" alt="GoRide Schema" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:6px;">
+    </a>
+  </p>
+
+  *Tip: After expanding, click the image to open the full-size version (zoom / fullscreen available in GitHub viewer).*
+</details>
+
 
 <br>
 
